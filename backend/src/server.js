@@ -8,7 +8,7 @@ const app = express()
 
 const __dirname = path.resolve()
 
-app.get("/health", (req, res) => {
+app.get("/health1", (req, res) => {
     res.status(200).json({msg: "success from health"})
 })
 
