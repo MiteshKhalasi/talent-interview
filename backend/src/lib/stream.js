@@ -14,6 +14,13 @@ export const upsertStreamUser = async (userData) => {
     try {
         await chatClient.upsertUser(userData)
         console.log("Stream user upserted successfully: ", userData)
+        //
+        const response = await chatClient.queryUsers({
+            id: { $eq: userData.id }
+        })
+
+        console.log(response.users)
+        //
     } catch (error) {
         console.error("Error upserting Stream user:", error)
     }
